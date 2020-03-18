@@ -13,7 +13,7 @@ export default class AsciifyCommand extends Command {
       category: Category.fun.name,
       description: {
         content: "Convierte texto en arte ASCII",
-        usage: "ascii [texto]",
+        usage: "[texto]",
         examples: ["DogeBot"]
       },
       ratelimit: 2,

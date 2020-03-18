@@ -16,7 +16,6 @@ export default class HelpCommand extends Command {
         examples: ["ping"]
       },
       category: CommandCategory.utility.name,
-      clientPermissions: [Permissions.FLAGS.EMBED_LINKS],
       ratelimit: 2,
       args: [
         {
