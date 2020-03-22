@@ -4,3 +4,4 @@ node_modules
 src/config/config.json
 logs.txt
 database.sqlite
+commands.dat
