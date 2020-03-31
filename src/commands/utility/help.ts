@@ -16,7 +16,6 @@ export default class HelpCommand extends Command {
         examples: ["ping"]
       },
       category: CommandCategory.utility.name,
-      clientPermissions: [Permissions.FLAGS.EMBED_LINKS],
       ratelimit: 2,
       args: [
         {
@@ -65,7 +64,7 @@ export default class HelpCommand extends Command {
         `\`${this.handler.prefix} ${
           command.aliases[0]
         } ${command.description.examples.join(
-          `\`\n\`${command.aliases[0]}`
+          `\`\n\`${this.handler.prefix} ${command.aliases[0]} `
         )}\``,
         true
       );
