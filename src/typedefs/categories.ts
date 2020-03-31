@@ -3,7 +3,8 @@ const Category: {
 } = {
   utility: { name: "herramientas", emoji: ":tools:" },
   fun: { name: "diversión", emoji: ":tada:" },
-  info: { name: "información", emoji: ":information_source:" }
+  info: { name: "información", emoji: ":information_source:" },
+  automation: { name: "automatización", emoji: ":gear:" }
 };
 
 export default Category;
