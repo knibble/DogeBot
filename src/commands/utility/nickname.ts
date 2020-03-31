@@ -1,8 +1,6 @@
 import { Command } from "discord-akairo";
-import { Message } from "discord.js";
 import Category from "../../typedefs/categories";
-import { MessageEmbed } from "discord.js";
-import { Permissions } from "discord.js";
+import { Permissions, Message, MessageEmbed } from "discord.js";
 
 export default class NicknameCommand extends Command {
   constructor() {
@@ -15,6 +13,7 @@ export default class NicknameCommand extends Command {
         examples: ["GatoMan"]
       },
       clientPermissions: [Permissions.FLAGS.CHANGE_NICKNAME],
+      channel: "guild",
       ratelimit: 2,
       args: [
         {
