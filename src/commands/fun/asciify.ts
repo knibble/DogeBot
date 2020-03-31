@@ -20,6 +20,7 @@ export default class AsciifyCommand extends Command {
       args: [
         {
           id: "text",
+          match: "content",
           type: "string"
         }
       ]
