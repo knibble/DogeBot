@@ -36,7 +36,11 @@ class DogeBot extends AkairoClient {
       ownerID: config.bot.owner,
       shards: "auto",
       presence: {
-        status: "dnd"
+        activity: {
+          type: "PLAYING",
+          name: `doges y calabozos | ${config.bot.prefix}ayuda`
+        },
+        status: "online"
       }
     });
   }
