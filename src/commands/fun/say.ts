@@ -25,7 +25,8 @@ export default class SayCommand extends Command {
 
   public async exec(message: Message, { text }: { text: string }) {
     if (text) {
-      return message.util!.send(text.trim());
+      await message.util!.send(text.trim());
+      await message.delete();
     }
   }
 }

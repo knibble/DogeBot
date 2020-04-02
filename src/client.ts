@@ -38,7 +38,7 @@ class DogeBot extends AkairoClient {
       presence: {
         activity: {
           type: "PLAYING",
-          name: `doges y calabozos | ${config.bot.prefix}ayuda`
+          name: `${config.bot.prefix}ayuda | doges y calabozos`
         },
         status: "online"
       }
