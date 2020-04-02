@@ -1,6 +1,6 @@
 # DogeBot <img src="https://files.catbox.moe/j3s2rq.png" align="right">
 
-> Multi-Purpose Discord Bot (Current in Development)
+> Multi-Purpose Discord Bot (Currently in Development)
 
 ## Development
 
