@@ -6,28 +6,17 @@
 
 ### Getting Started
 
-- Rename the file `config.sample.json` to `config.json` with this format on `src/config/`
+#### Add an .env file with this setup:
 
-```json
-{
-  "api": {
-    "token": "hidden"
-  },
-  "bot": {
-    "prefix": ":}",
-    "owner": "ownerId",
-    "owners": ["ownerId"],
-    "id": "id",
-    "secret": "secret",
-    "token": "toket"
-  },
-  "env": {
-    "debug": "false",
-    "type": "prod",
-    "log_level": "info",
-    "database": "./database.sqlite"
-  }
-}
+```bash
+COMMAND_PREFIX=!
+OWNER=
+BOT_ID=
+BOT_TOKEN=
+DEBUG=false
+TYPE=prod
+LOG_LEVEL=info
+DATABASE=
 ```
 
 - Run the server locally (and watch changes):
