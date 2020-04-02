@@ -6,7 +6,7 @@
 
 ### Getting Started
 
-- Set up a `config.json` file with this format on `src/config/`
+- Rename the file `config.sample.json` to `config.json` with this format on `src/config/`
 
 ```json
 {
@@ -33,5 +33,5 @@
 - Run the server locally (and watch changes):
 
 ```bash
-$ npm run watch
+$ npm start
 ```

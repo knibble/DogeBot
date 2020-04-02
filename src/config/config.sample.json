@@ -1,0 +1,18 @@
+{
+    "api": {
+        "token": ""
+    },
+    "bot": {
+        "prefix": "?",
+        "owner": "",
+        "id": "",
+        "secret": "",
+        "token": ""
+    },
+    "env": {
+        "debug": "false",
+        "type": "prod",
+        "log_level": "info",
+        "database": "./database.sqlite"
+    }
+}
