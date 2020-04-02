@@ -1,8 +1,7 @@
 import pino, { Logger } from "pino";
-import config from "./config/config.json";
 
 const logger: Logger = pino({
-  level: config.env.debug ? "debug" : config.env.log_level || "info",
+  level: process.env.DEBUG ? "debug" : process.env.LOG_LEVEL || "info",
   prettyPrint: {
     colorize: true,
     translateTime: true,
