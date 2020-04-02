@@ -1,7 +1,7 @@
 lib
 dist
 node_modules
-src/config/config.json
+.env
 logs.txt
 database.sqlite
 commands.dat

@@ -1,12 +1,11 @@
 import { AkairoClient, CommandHandler, ListenerHandler } from "discord-akairo";
-import config from "./config/config.json";
 import { join } from "path";
 
 class DogeBot extends AkairoClient {
   public commandHandler: CommandHandler = new CommandHandler(this, {
     directory: join(__dirname, ".", "commands"),
-    prefix: config.bot.prefix,
-    ignorePermissions: config.bot.owners,
+    prefix: process.env.COMMAND_PREFIX,
+    ignorePermissions: process.env.OWNER,
     handleEdits: true,
     commandUtil: true,
     commandUtilLifetime: 3e5, // 5 minutes
@@ -33,12 +32,12 @@ class DogeBot extends AkairoClient {
 
   public constructor() {
     super({
-      ownerID: config.bot.owner,
+      ownerID: process.env.OWNER,
       shards: "auto",
       presence: {
         activity: {
           type: "PLAYING",
-          name: `${config.bot.prefix}ayuda | doges y calabozos`
+          name: `${process.env.COMMAND_PREFIX}ayuda | doges y calabozos`
         },
         status: "online"
       }
@@ -59,7 +58,7 @@ class DogeBot extends AkairoClient {
 
   public async start(): Promise<string> {
     await this._init();
-    return this.login(config.bot.token);
+    return this.login(process.env.BOT_TOKEN);
   }
 }
 
