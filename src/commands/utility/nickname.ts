@@ -13,7 +13,6 @@ export default class NicknameCommand extends Command {
         examples: ["GatoMan"],
       },
       clientPermissions: [Permissions.FLAGS.CHANGE_NICKNAME],
-      userPermissions: [Permissions.FLAGS.CHANGE_NICKNAME],
       channel: "guild",
       ratelimit: 2,
       args: [

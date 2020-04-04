@@ -14,6 +14,7 @@ export default class SayCommand extends Command {
       },
       clientPermissions: [Permissions.FLAGS.MANAGE_GUILD],
       userPermissions: [Permissions.FLAGS.MANAGE_GUILD],
+      channel: "guild",
       ratelimit: 2,
       args: [
         {
