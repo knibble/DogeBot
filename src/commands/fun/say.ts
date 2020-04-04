@@ -10,16 +10,17 @@ export default class SayCommand extends Command {
       description: {
         content: "Repito lo que me digas",
         usage: "[texto]",
-        examples: ["hola soy doge!"]
+        examples: ["hola soy doge!"],
       },
       clientPermissions: [Permissions.FLAGS.MANAGE_GUILD],
+      userPermissions: [Permissions.FLAGS.MANAGE_GUILD],
       ratelimit: 2,
       args: [
         {
           id: "text",
-          match: "content"
-        }
-      ]
+          match: "content",
+        },
+      ],
     });
   }
 

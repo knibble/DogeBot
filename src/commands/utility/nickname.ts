@@ -10,17 +10,18 @@ export default class NicknameCommand extends Command {
       description: {
         content: "Cambia tu apodo en este servidor",
         usage: "[nombre]",
-        examples: ["GatoMan"]
+        examples: ["GatoMan"],
       },
       clientPermissions: [Permissions.FLAGS.CHANGE_NICKNAME],
+      userPermissions: [Permissions.FLAGS.CHANGE_NICKNAME],
       channel: "guild",
       ratelimit: 2,
       args: [
         {
           id: "name",
-          type: "string"
-        }
-      ]
+          type: "string",
+        },
+      ],
     });
   }
 
