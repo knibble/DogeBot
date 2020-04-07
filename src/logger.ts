@@ -6,13 +6,12 @@ const logger: Logger = pino({
     colorize: true,
     translateTime: true,
     ignore: "pid,hostname",
-    crlf: false
-  }
+    crlf: false,
+  },
 });
 
 const DogeBot = logger.child({ name: "DogeBot" });
 const listener = logger.child({ module: "Listener" });
-const database = logger.child({ module: "Database" });
 
 process.on(
   "uncaughtException",
@@ -27,5 +26,5 @@ process.on("unhandledRejection", (reason, p) => {
   console.log(p);
 });
 
-export { listener, database };
+export { listener };
 export default DogeBot;

@@ -16,7 +16,6 @@ BOT_TOKEN=
 DEBUG=false
 TYPE=prod
 LOG_LEVEL=info
-DATABASE=
 ```
 
 - Run the server locally (and watch changes):
