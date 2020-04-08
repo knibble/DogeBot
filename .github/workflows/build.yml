@@ -1,4 +1,4 @@
-name: Build
+name: Container Build
 on:
   pull_request:
     branches:
@@ -23,5 +23,5 @@ jobs:
 
       - name: Build, tag, and push container
         run: |
-          docker build --build-arg VERSION=${{ github.sha }} -t docker.pkg.github.com/knibble/DogeBot/dogebot:latest .
-          docker push docker.pkg.github.com/knibble/DogeBot/dogebot:latest
+          docker build --build-arg VERSION=${{ github.sha }} -t docker.pkg.github.com/knibble/dogebot/dogebot:latest .
+          docker push docker.pkg.github.com/knibble/dogebot/dogebot:latest
