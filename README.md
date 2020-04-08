@@ -23,3 +23,9 @@ LOG_LEVEL=info
 ```bash
 $ npm start
 ```
+
+## Running on Docker
+
+```bash
+docker-compose up
+```
