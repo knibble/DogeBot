@@ -4,7 +4,7 @@
 
 > Most of the features here are fixed to satisfy a custom guild called [kjchints](https://discord.io/kjchints) at first.
 
-> This would be changed once the first released is done ;)
+> This would be changed once the first release is done ;)
 
 ## Development
 
