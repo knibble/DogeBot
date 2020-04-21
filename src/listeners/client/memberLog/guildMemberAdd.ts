@@ -9,7 +9,7 @@ export default class GuildMemberAddListener extends Listener {
     super("guildMemberAddListener", {
       emitter: "client",
       event: "guildMemberAdd",
-      category: "automation"
+      category: "automation",
     });
   }
 
@@ -23,9 +23,9 @@ export default class GuildMemberAddListener extends Listener {
           member.guild.name
         }**!
         Esperamos que la pases bien, wow! ${this.client.emojis.cache.find(
-          e => e.name === "cooldoge"
+          (e) => e.name === "cooldoge"
         )}
-        Recuerda leer ${member.guild.channels.cache.get("640746191096774677")}
+        Recuerda leer ${member.guild.channels.cache.get("702078137651167253")}
         Si tienes cualquier duda solo contacta a cualquiera de los miembros de ${member.guild.roles.cache.get(
           "640770292808941586"
         )}
