@@ -19,9 +19,7 @@ export default class GuildMemberAddListener extends Listener {
       .setAuthor(`${member.user.tag}`, member.user.displayAvatarURL())
       .addField(
         `Bienvenido/a!`,
-        `<@${member.user.id}> has llegado al servidor de **${
-          member.guild.name
-        }**!
+        `Gracias por unirte al servidor de **${member.guild.name}**!
         Esperamos que la pases bien, wow! ${this.client.emojis.cache.find(
           (e) => e.name === "cooldoge"
         )}
@@ -34,9 +32,14 @@ export default class GuildMemberAddListener extends Listener {
       .setFooter("Doge te llenara de caricias")
       .setTimestamp(new Date());
 
-    /** WIP => replace this id with the corresponding saved config channel for welcome   */
-    return (this.client.channels.cache.get(
+    const channel = this.client.channels.cache.get(
       "640752264390246400"
-    ) as TextChannel).send(embed);
+    ) as TextChannel;
+
+    /** WIP => replace this id with the corresponding saved config channel for welcome   */
+    return Promise.all([
+      channel.send(`Hola, <@${member.user.id}>!`),
+      channel.send(embed),
+    ]);
   }
 }
