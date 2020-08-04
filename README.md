@@ -16,6 +16,12 @@
 yarn
 ```
 
+or
+
+```bash
+npm i
+```
+
 #### Add an .env file with this setup:
 
 ```bash
@@ -32,6 +38,12 @@ LOG_LEVEL=info
 
 ```bash
 $ yarn start
+```
+
+or
+
+```bash
+npm start
 ```
 
 ## Running on Docker
