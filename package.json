@@ -29,7 +29,7 @@
     "@types/pino": "^5.17.0",
     "@types/yargs": "^15.0.4",
     "concurrently": "^5.1.0",
-    "nodemon": "^2.0.2",
+    "nodemon": "^2.0.4",
     "pino-pretty": "^3.6.1",
     "typescript": "^3.8"
   },
@@ -42,7 +42,7 @@
     "common-tags": "^1.8.0",
     "discord-akairo": "github:discord-akairo/discord-akairo",
     "discord.js": "github:discordjs/discord.js",
-    "dotenv": "^8.2.0",
+    "dotenv": "latest",
     "kayn": "^0.10.2",
     "lodash": "^4.17.19",
     "moment": "^2.24.0",
