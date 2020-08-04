@@ -1,20 +1,20 @@
-import moment from "moment";
-import { Command } from "discord-akairo";
-import { Message, VerificationLevel, MessageEmbed } from "discord.js";
-import Category from "../../typedefs/categories";
-import { stripIndents } from "common-tags";
+import moment from "moment"
+import { Command } from "discord-akairo"
+import { Message, VerificationLevel, MessageEmbed } from "discord.js"
+import Category from "../../typedefs/categories"
+import { stripIndents } from "common-tags"
 
 type HumanLevels = {
-  [key in VerificationLevel]: string;
-};
+  [key in VerificationLevel]: string
+}
 
 const HUMAN_LEVELS: HumanLevels = {
   NONE: "Ninguno",
   LOW: "Bajo",
   MEDIUM: "Intermedio",
   HIGH: "(╯°□°）╯︵ ┻━┻'",
-  VERY_HIGH: "┻━┻ ﾐヽ(ಠ益ಠ)ノ彡┻━┻"
-};
+  VERY_HIGH: "┻━┻ ﾐヽ(ಠ益ಠ)ノ彡┻━┻",
+}
 
 export default class ServerCommand extends Command {
   public constructor() {
@@ -23,16 +23,16 @@ export default class ServerCommand extends Command {
       description: {
         content: "Devuelve información acerca del servidor.",
         usage: "",
-        examples: [""]
+        examples: [""],
       },
 
       category: Category.info.name,
-      ratelimit: 2
-    });
+      ratelimit: 2,
+    })
   }
 
   public async exec(message: Message) {
-    const guild = message.guild!;
+    const guild = message.guild!
     const embed = new MessageEmbed()
       .setColor(15897941)
       .setDescription(`Info acerca de **${guild.name}** (ID: ${guild.id})`)
@@ -67,8 +67,8 @@ export default class ServerCommand extends Command {
         • Nivel de Verificación: ${HUMAN_LEVELS[guild.verificationLevel]}
       `
       )
-      .setThumbnail(guild.iconURL() || "");
+      .setThumbnail(guild.iconURL() || "")
 
-    return message.util!.send(embed);
+    return message.util!.send(embed)
   }
 }

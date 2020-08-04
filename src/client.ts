@@ -1,5 +1,5 @@
-import { AkairoClient, CommandHandler, ListenerHandler } from "discord-akairo";
-import { join } from "path";
+import { AkairoClient, CommandHandler, ListenerHandler } from "discord-akairo"
+import { join } from "path"
 
 class DogeBot extends AkairoClient {
   public commandHandler: CommandHandler = new CommandHandler(this, {
@@ -20,15 +20,15 @@ class DogeBot extends AkairoClient {
         ended:
           "You exceeded the maximum amount of tries, the command has now been cancelled.",
         retries: 3,
-        time: 3e4 // 30 seconds
+        time: 3e4, // 30 seconds
       },
-      otherwise: ""
-    }
-  });
+      otherwise: "",
+    },
+  })
 
   public listenerHandler: ListenerHandler = new ListenerHandler(this, {
-    directory: join(__dirname, ".", "listeners")
-  });
+    directory: join(__dirname, ".", "listeners"),
+  })
 
   public constructor() {
     super({
@@ -37,29 +37,29 @@ class DogeBot extends AkairoClient {
       presence: {
         activity: {
           type: "PLAYING",
-          name: `${process.env.COMMAND_PREFIX}ayuda | doges y calabozos`
+          name: `${process.env.COMMAND_PREFIX}ayuda | doges y calabozos`,
         },
-        status: "online"
-      }
-    });
+        status: "online",
+      },
+    })
   }
 
   private async _init(): Promise<void> {
-    this.commandHandler.useListenerHandler(this.listenerHandler);
+    this.commandHandler.useListenerHandler(this.listenerHandler)
     this.listenerHandler.setEmitters({
       commandHandler: this.commandHandler,
       listenerHandler: this.listenerHandler,
-      process: process
-    });
+      process: process,
+    })
 
-    this.commandHandler.loadAll();
-    this.listenerHandler.loadAll();
+    this.commandHandler.loadAll()
+    this.listenerHandler.loadAll()
   }
 
   public async start(): Promise<string> {
-    await this._init();
-    return this.login(process.env.BOT_TOKEN);
+    await this._init()
+    return this.login(process.env.BOT_TOKEN)
   }
 }
 
-export default DogeBot;
+export default DogeBot

@@ -1,7 +1,7 @@
-import { Command, CommandUtil } from "discord-akairo";
-import { Message } from "discord.js";
-import Category from "../../typedefs/categories";
-import { stripIndents } from "common-tags";
+import { Command, CommandUtil } from "discord-akairo"
+import { Message } from "discord.js"
+import Category from "../../typedefs/categories"
+import { stripIndents } from "common-tags"
 
 const RESPONSES = [
   stripIndents`:ping_pong: Pong! \`$(ping)ms\`
@@ -11,8 +11,8 @@ const RESPONSES = [
   stripIndents`Espero una buena :cookie: despues de esto \`$(ping)ms\`
 						Me tarde alrededor de \`$(heartbeat)ms\` en ir y volver`,
   stripIndents`Soy bueno haciendo pong! \`$(ping)ms\`
-						Me tarde alrededor de \`$(heartbeat)ms\` en ir y volver`
-];
+						Me tarde alrededor de \`$(heartbeat)ms\` en ir y volver`,
+]
 
 export default class PingCommand extends Command {
   constructor() {
@@ -23,15 +23,15 @@ export default class PingCommand extends Command {
         content:
           "Hazme ping y te doy un pong! De paso te digo cuanto me tardo en llegar al servidor y volver.",
         usage: "",
-        examples: [""]
+        examples: [""],
       },
-      ratelimit: 2
-    });
+      ratelimit: 2,
+    })
   }
 
   public async exec(message: Message) {
-    const msg = await message.util!.send("Pinging...");
-    if (!msg) return null;
+    const msg = await message.util!.send("Pinging...")
+    if (!msg) return null
 
     return message.util!.send(
       RESPONSES[Math.floor(Math.random() * RESPONSES.length)]
@@ -43,6 +43,6 @@ export default class PingCommand extends Command {
           ).toString()
         )
         .replace("$(heartbeat)", Math.round(this.client.ws.ping).toString())
-    );
+    )
   }
 }

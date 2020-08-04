@@ -1,6 +1,6 @@
-import DogeBot from "./client.js";
+import DogeBot from "./client.js"
 
 // initialize the bot
-const client = new DogeBot();
+const client = new DogeBot()
 
-client.start();
+client.start()

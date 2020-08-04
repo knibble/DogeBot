@@ -1,9 +1,9 @@
-import { Command } from "discord-akairo";
-import { Message, MessageAttachment } from "discord.js";
-import Category from "../../typedefs/categories";
-import { fetch } from "popsicle";
+import { Command } from "discord-akairo"
+import { Message, MessageAttachment } from "discord.js"
+import Category from "../../typedefs/categories"
+import { fetch } from "popsicle"
 
-const api = "https://shibe.online/api/shibes";
+const api = "https://shibe.online/api/shibes"
 
 export default class DogePicCommand extends Command {
   constructor() {
@@ -13,27 +13,27 @@ export default class DogePicCommand extends Command {
       description: {
         content: "Te muestro una imagen random de un doge",
         usage: "",
-        examples: [""]
+        examples: [""],
       },
-      ratelimit: 2
-    });
+      ratelimit: 2,
+    })
   }
 
   async getDogePic() {
     try {
       const response = await fetch(
         `${api}?count=${1}&urls=${true}&httpsUrls=${true}`
-      );
-      return response;
+      )
+      return response
     } catch (error) {
-      console.log(error);
+      console.log(error)
     }
   }
 
   public async exec(message: Message) {
-    const pic = await this.getDogePic();
-    const dogepic = await pic!.json();
+    const pic = await this.getDogePic()
+    const dogepic = await pic!.json()
 
-    return message.util!.send(new MessageAttachment(dogepic[0]));
+    return message.util!.send(new MessageAttachment(dogepic[0]))
   }
 }
