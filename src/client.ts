@@ -13,12 +13,13 @@ class DogeBot extends AkairoClient {
     argumentDefaults: {
       prompt: {
         modifyStart: (_, str): string =>
-          `${str}\n\n Type \`cancel\` to cancel the command...`,
+          `${str}\n\n Escribe \`cancelar\` para cancelar el comando...`,
         modifyRetry: (_, str): string =>
-          `${str}\n\n Type \`cancel\` to cancel the command...`,
+          `${str}\n\n Escribe \`cancelar\` para cancelar el comando...`,
         timeout: "You took too long, the command has been cancelled.",
         ended:
-          "You exceeded the maximum amount of tries, the command has now been cancelled.",
+          "Superaste la cantidad máxima de intentos, el comando ahora ha sido cancelado.",
+        cancelWord: "cancelar",
         retries: 3,
         time: 3e4, // 30 seconds
       },
