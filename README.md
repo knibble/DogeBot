@@ -10,6 +10,12 @@
 
 ### Getting Started
 
+#### Install dependencies
+
+```bash
+yarn
+```
+
 #### Add an .env file with this setup:
 
 ```bash
@@ -25,7 +31,7 @@ LOG_LEVEL=info
 - Run the server locally (and watch changes):
 
 ```bash
-$ npm start
+$ yarn start
 ```
 
 ## Running on Docker

@@ -1,6 +1,6 @@
-import { Command } from "discord-akairo";
-import Category from "../../typedefs/categories";
-import { Permissions, Message } from "discord.js";
+import { Command } from "discord-akairo"
+import Category from "../../typedefs/categories"
+import { Permissions, Message, TextChannel } from "discord.js"
 
 export default class NukeCommand extends Command {
   public constructor() {
@@ -17,22 +17,27 @@ export default class NukeCommand extends Command {
       userPermissions: [Permissions.FLAGS.MANAGE_GUILD],
       channel: "guild",
       ratelimit: 2,
-    });
+    })
   }
 
   public async exec(message: Message) {
-    const messages = message.channel.messages.cache;
-
     try {
-      await message.channel.bulkDelete(messages);
+      let fetched
+      do {
+        fetched = await message.channel.messages.fetch({
+          limit: 100,
+        })
+        ;(message.channel as TextChannel).bulkDelete(fetched)
+      } while (fetched.size >= 2)
     } catch (error) {
-      return message.util!.send("Oops hubo un error al eliminar los mensajes!");
+      console.error(error)
+      return message.util!.send("Oops hubo un error al eliminar los mensajes!")
     }
 
     return (
       await message.util!.send(":exploding_head: :bomb:  Mensajes borrados!")
     ).delete({
       timeout: 800,
-    });
+    })
   }
 }

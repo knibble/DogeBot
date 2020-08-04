@@ -1,5 +1,5 @@
-import { Listener } from "discord-akairo";
-import { Message } from "discord.js";
+import { Listener } from "discord-akairo"
+import { Message } from "discord.js"
 
 export default class MissingPermissionsListener extends Listener {
   public constructor() {
@@ -7,12 +7,12 @@ export default class MissingPermissionsListener extends Listener {
       emitter: "commandHandler",
       event: "missingPermissions",
       category: "commandHandler",
-    });
+    })
   }
 
   public exec(message: Message) {
     return message.reply(
       "Oops! No tienes los permisos para usar ese comando >w<"
-    );
+    )
   }
 }

@@ -1,9 +1,10 @@
-import moment from "moment";
-import { stripIndents } from "common-tags";
-import { Command } from "discord-akairo";
-import { Message, MessageEmbed, Permissions, TextChannel } from "discord.js";
-import "moment-duration-format";
-import Category from "../../typedefs/categories";
+import moment from "moment"
+import "moment-duration-format"
+import Category from "../../typedefs/categories"
+
+import { stripIndents } from "common-tags"
+import { Command } from "discord-akairo"
+import { Message, MessageEmbed, Permissions, TextChannel } from "discord.js"
 
 export default class ChannelInfoCommand extends Command {
   public constructor() {
@@ -12,7 +13,7 @@ export default class ChannelInfoCommand extends Command {
       description: {
         content: "Muestra información arcerca de un canal.",
         usage: "[canal]",
-        examples: ["#general", "general", "222197033908436994"]
+        examples: ["#general", "general", "222197033908436994"],
       },
       category: Category.info.name,
       channel: "guild",
@@ -23,10 +24,10 @@ export default class ChannelInfoCommand extends Command {
           id: "channel",
           match: "content",
           type: "channel",
-          default: (message: Message) => message.channel
-        }
-      ]
-    });
+          default: (message: Message) => message.channel,
+        },
+      ],
+    })
   }
 
   public async exec(message: Message, { channel }: { channel: TextChannel }) {
@@ -44,8 +45,8 @@ export default class ChannelInfoCommand extends Command {
           .format("YYYY/MM/DD hh:mm:ss")}
 			`
       )
-      .setThumbnail(message.guild!.iconURL() || "");
+      .setThumbnail(message.guild!.iconURL() || "")
 
-    return message.util!.send(embed);
+    return message.util!.send(embed)
   }
 }

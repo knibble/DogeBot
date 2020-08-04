@@ -1,21 +1,21 @@
-import moment from "moment";
-import { stripIndents } from "common-tags";
-import { Command } from "discord-akairo";
-import { Message, MessageEmbed, Permissions } from "discord.js";
-import "moment-duration-format";
-import Category from "../../typedefs/categories";
+import moment from "moment"
+import { stripIndents } from "common-tags"
+import { Command } from "discord-akairo"
+import { Message, MessageEmbed, Permissions } from "discord.js"
+import "moment-duration-format"
+import Category from "../../typedefs/categories"
 
 export default class StatsCommand extends Command {
   public constructor() {
     super("stats", {
       aliases: ["stats"],
       description: {
-        content: "Muestra estadísticas acerca del bot."
+        content: "Muestra estadísticas acerca del bot.",
       },
       category: Category.info.name,
       clientPermissions: [Permissions.FLAGS.EMBED_LINKS],
-      ratelimit: 2
-    });
+      ratelimit: 2,
+    })
   }
 
   public async exec(message: Message) {
@@ -47,8 +47,8 @@ export default class StatsCommand extends Command {
         true
       )
       .setThumbnail(this.client.user!.displayAvatarURL() || "")
-      .setFooter(`© ${new Date().getUTCFullYear()} DogeBot`);
+      .setFooter(`© ${new Date().getUTCFullYear()} DogeBot`)
 
-    return message.util!.send(embed);
+    return message.util!.send(embed)
   }
 }

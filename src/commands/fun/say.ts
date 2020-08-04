@@ -1,6 +1,6 @@
-import { Command } from "discord-akairo";
-import Category from "../../typedefs/categories";
-import { Permissions, Message } from "discord.js";
+import { Command } from "discord-akairo"
+import Category from "../../typedefs/categories"
+import { Permissions, Message } from "discord.js"
 
 export default class SayCommand extends Command {
   constructor() {
@@ -22,13 +22,13 @@ export default class SayCommand extends Command {
           match: "content",
         },
       ],
-    });
+    })
   }
 
   public async exec(message: Message, { text }: { text: string }) {
     if (text) {
-      await message.util!.send(text.trim());
-      await message.delete();
+      await message.util!.send(text.trim())
+      await message.delete()
     }
   }
 }

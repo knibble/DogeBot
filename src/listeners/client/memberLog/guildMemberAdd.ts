@@ -1,8 +1,8 @@
-import { Listener } from "discord-akairo";
-import Category from "../../../typedefs/categories";
-import { GuildMember } from "discord.js";
-import { MessageEmbed } from "discord.js";
-import { TextChannel } from "discord.js";
+import { Listener } from "discord-akairo"
+import Category from "../../../typedefs/categories"
+import { GuildMember } from "discord.js"
+import { MessageEmbed } from "discord.js"
+import { TextChannel } from "discord.js"
 
 export default class GuildMemberAddListener extends Listener {
   constructor() {
@@ -10,7 +10,7 @@ export default class GuildMemberAddListener extends Listener {
       emitter: "client",
       event: "guildMemberAdd",
       category: "automation",
-    });
+    })
   }
 
   async exec(member: GuildMember) {
@@ -30,16 +30,16 @@ export default class GuildMemberAddListener extends Listener {
         `
       )
       .setFooter("Doge te llenara de caricias")
-      .setTimestamp(new Date());
+      .setTimestamp(new Date())
 
     const channel = this.client.channels.cache.get(
       "640752264390246400"
-    ) as TextChannel;
+    ) as TextChannel
 
     /** WIP => replace this id with the corresponding saved config channel for welcome   */
     return Promise.all([
       channel.send(`Hola, <@${member.user.id}>!`),
       channel.send(embed),
-    ]);
+    ])
   }
 }

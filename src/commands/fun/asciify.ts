@@ -1,10 +1,10 @@
-import { Command } from "discord-akairo";
-import { Message } from "discord.js";
-import { MessageEmbed } from "discord.js";
-import { fetch } from "popsicle";
-import Category from "../../typedefs/categories";
+import { Command } from "discord-akairo"
+import { Message } from "discord.js"
+import { MessageEmbed } from "discord.js"
+import { fetch } from "popsicle"
+import Category from "../../typedefs/categories"
 
-const api = "http://artii.herokuapp.com/";
+const api = "http://artii.herokuapp.com/"
 
 export default class AsciifyCommand extends Command {
   constructor() {
@@ -14,35 +14,35 @@ export default class AsciifyCommand extends Command {
       description: {
         content: "Convierte texto en arte ASCII",
         usage: "[texto]",
-        examples: ["DogeBot"]
+        examples: ["DogeBot"],
       },
       ratelimit: 2,
       args: [
         {
           id: "text",
           match: "content",
-          type: "string"
-        }
-      ]
-    });
+          type: "string",
+        },
+      ],
+    })
   }
 
   async toAsciiArt(text: string) {
     try {
-      const response = await fetch(`${api}make?text=${text}`);
-      return response;
+      const response = await fetch(`${api}make?text=${text}`)
+      return response
     } catch (error) {
-      console.log(error);
+      console.log(error)
     }
   }
 
   public async exec(message: Message, { text }: { text: string }) {
     if (!text) {
-      const embed = new MessageEmbed().setColor(15897941);
+      const embed = new MessageEmbed().setColor(15897941)
       embed.addField(
         "Oops!",
         "Whoa! necesitas escribir un argumento para que funcione > <"
-      );
+      )
 
       embed.addField(
         "Ejemplos",
@@ -50,19 +50,19 @@ export default class AsciifyCommand extends Command {
           this.aliases[0]
         } ${this.description.examples.join(`\`\n\`${this.aliases[0]}`)}\``,
         true
-      );
+      )
 
-      return message.util!.send(embed);
+      return message.util!.send(embed)
     }
 
-    const asciiArt = await this.toAsciiArt(text);
-    const asciiText = await asciiArt!.text();
+    const asciiArt = await this.toAsciiArt(text)
+    const asciiText = await asciiArt!.text()
 
     if (asciiArt!.statusText !== "OK")
       return message.util!.send(
         "Whoa! Algo extraño sucedio :thinking: , vuelve a intentarlo."
-      );
+      )
 
-    return message.util!.send(`\`\`\`${asciiText}\`\`\``);
+    return message.util!.send(`\`\`\`${asciiText}\`\`\``)
   }
 }
