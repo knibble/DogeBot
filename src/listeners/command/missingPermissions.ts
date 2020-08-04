@@ -1,5 +1,5 @@
-import { Listener, Command } from "discord-akairo";
-import { Message, User, TextChannel } from "discord.js";
+import { Listener } from "discord-akairo";
+import { Message } from "discord.js";
 
 export default class MissingPermissionsListener extends Listener {
   public constructor() {

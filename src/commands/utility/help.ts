@@ -13,16 +13,16 @@ export default class HelpCommand extends Command {
         content:
           "Muestra una lista de los comandos disponibles e información acerca de ellos",
         usage: "[comando]",
-        examples: ["ping"]
+        examples: ["ping"],
       },
       category: CommandCategory.utility.name,
       ratelimit: 2,
       args: [
         {
           id: "command",
-          type: "commandAlias"
-        }
-      ]
+          type: "commandAlias",
+        },
+      ],
     });
   }
 
@@ -42,8 +42,8 @@ export default class HelpCommand extends Command {
             category.id
           )}`,
           `${category
-            .filter(cmd => cmd.aliases.length > 0)
-            .map(cmd => `\`${cmd.aliases[0]}\``)
+            .filter((cmd) => cmd.aliases.length > 0)
+            .map((cmd) => `\`${cmd.aliases[0]}\``)
             .join(" ")}`
         );
       }
