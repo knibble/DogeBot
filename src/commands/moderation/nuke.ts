@@ -52,6 +52,9 @@ export default class NukeCommand extends Command {
       /^s(?:i?)?$/i.test(response?.content ?? "") ||
       /^y(?:e(?:a|s)?)?$/i.test(response?.content ?? "")
     ) {
+      await message.channel.send(
+        `:stopwatch: | **${channel.name}** esta apunto de ser limpiado totalmente, tick, tock...`
+      )
       let newChannel
       try {
         newChannel = await channel.clone()
