@@ -44,7 +44,7 @@
     "discord.js": "github:discordjs/discord.js",
     "dotenv": "latest",
     "kayn": "^0.10.2",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "moment": "^2.24.0",
     "moment-duration-format": "^2.3.2",
     "pino": "^6.0.0",
